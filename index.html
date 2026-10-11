@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TripSketch - 旅程プランナー</title>
-<meta name="description" content="TripSketchは、友だちや家族と一緒に編集できる旅のしおりアプリです。">
+<title>Yusuke Ayabe のアプリ</title>
+<meta name="description" content="個人開発者 Yusuke Ayabe が公開しているiPhoneアプリの一覧です。">
 <style>
   :root {
     color-scheme: light dark;
@@ -46,57 +46,78 @@
     -webkit-font-smoothing: antialiased;
   }
   .page { max-width: 720px; margin: 0 auto; padding: 56px 16px 64px; }
-  h1 { font-size: 1.75rem; line-height: 1.4; margin: 0 0 4px; }
-  .sub { color: var(--ink-soft); margin: 0 0 32px; }
-  .card {
+  h1 { font-size: 1.6rem; line-height: 1.4; margin: 0 0 4px; }
+  .sub { color: var(--ink-soft); margin: 0 0 36px; }
+  .app {
     background: var(--paper-raised);
     border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 20px 22px;
-    margin-bottom: 24px;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 20px;
   }
-  .card h2 { font-size: 1.05rem; margin: 0 0 8px; }
-  .card ul { margin: 0; padding-left: 1.2em; }
+  .app-head { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; }
+  .app-head img {
+    width: 72px; height: 72px; flex: none;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+  }
+  .app h2 { font-size: 1.15rem; line-height: 1.4; margin: 0; }
+  .genre { color: var(--ink-soft); font-size: 0.85rem; margin: 2px 0 0; }
+  .app p.desc { margin: 0 0 16px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
   .store {
     display: inline-block;
     background: var(--amber);
     color: #17232C;
     font-weight: 700;
     text-decoration: none;
-    padding: 12px 22px;
+    padding: 8px 18px;
     border-radius: 999px;
-    margin-bottom: 32px;
+    font-size: 0.92rem;
   }
-  .links { list-style: none; padding: 0; margin: 0; }
-  .links li { padding: 10px 0; border-top: 1px solid var(--line); }
-  .links li:last-child { border-bottom: 1px solid var(--line); }
   a { color: var(--link); }
+  .actions a:not(.store) { font-size: 0.92rem; }
   footer { color: var(--ink-soft); font-size: 0.85rem; margin-top: 40px; }
 </style>
 </head>
 <body>
 <main class="page">
-  <h1>TripSketch - 旅程プランナー</h1>
-  <p class="sub">友だちや家族と一緒に編集できる、旅のしおりアプリ</p>
+  <h1>Yusuke Ayabe のアプリ</h1>
+  <p class="sub">個人で開発・公開しているiPhoneアプリです。</p>
 
-  <a class="store" href="https://apps.apple.com/jp/app/id6811914534">App Storeでダウンロード</a>
-
-  <section class="card">
-    <h2>できること</h2>
-    <ul>
-      <li>1日ごとのタイムラインで予定を組み立て、ドラッグで時間を調整</li>
-      <li>招待リンクを送るだけで、同行者とリアルタイムに共同編集</li>
-      <li>1日分の予定を画像にして共有</li>
-      <li>複数の旅程をまとめて管理</li>
-    </ul>
+  <section class="app" id="tripsketch">
+    <div class="app-head">
+      <img src="img/tripsketch.jpg" alt="TripSketchのアイコン">
+      <div>
+        <h2>TripSketch - 旅程プランナー</h2>
+        <p class="genre">旅行</p>
+      </div>
+    </div>
+    <p class="desc">友だちや家族と一緒に編集できる旅のしおりアプリ。1日ごとのタイムラインで予定を組み立て、招待リンクで同行者とリアルタイムに共同編集できます。</p>
+    <div class="actions">
+      <a class="store" href="https://apps.apple.com/jp/app/id6811914534">App Store</a>
+      <a href="https://bebebe113.github.io/tripsketch-legal/support.html">サポート</a>
+      <a href="https://bebebe113.github.io/tripsketch-legal/">プライバシーポリシー</a>
+    </div>
   </section>
 
-  <ul class="links">
-    <li><a href="https://bebebe113.github.io/tripsketch-legal/support.html">サポート・お問い合わせ</a></li>
-    <li><a href="https://bebebe113.github.io/tripsketch-legal/">プライバシーポリシー</a></li>
-  </ul>
+  <section class="app" id="pyonpyon">
+    <div class="app-head">
+      <img src="img/pyonpyon.jpg" alt="ぴょんぴょんぴょんのアイコン">
+      <div>
+        <h2>ぴょんぴょんぴょん</h2>
+        <p class="genre">ゲーム・カジュアル</p>
+      </div>
+    </div>
+    <p class="desc">雨の降る池のほとりを、カエルがぴょんぴょん進んでいくドット絵アクションゲーム。押す長さでジャンプの高さが変わるワンボタン操作で、空から襲ってくる天敵をかわしましょう。</p>
+    <div class="actions">
+      <a class="store" href="https://apps.apple.com/jp/app/id6816640755">App Store</a>
+      <a href="https://bebebe113.github.io/pyonpyon-legal/support.html">サポート</a>
+      <a href="https://bebebe113.github.io/pyonpyon-legal/">プライバシーポリシー</a>
+    </div>
+  </section>
 
-  <footer>© 2026 TripSketch</footer>
+  <footer>お問い合わせ: <a href="mailto:ysk113a@gmail.com">ysk113a@gmail.com</a><br>© 2026 Yusuke Ayabe</footer>
 </main>
 </body>
 </html>
