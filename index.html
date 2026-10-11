@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TripSketch - 旅程プランナー</title>
+<meta name="description" content="TripSketchは、友だちや家族と一緒に編集できる旅のしおりアプリです。">
+<style>
+  :root {
+    color-scheme: light dark;
+    --paper: #F1F4F3;
+    --paper-raised: #FFFFFF;
+    --ink: #17232C;
+    --ink-soft: #5C6B72;
+    --line: #D8E0DE;
+    --amber: #E3A94D;
+    --link: #3A6B66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14181A;
+      --paper-raised: #1C2224;
+      --ink: #EDEFEF;
+      --ink-soft: #9DA9AC;
+      --line: #333B3D;
+      --amber: #E9BD73;
+      --link: #6FB3AA;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14181A;
+    --paper-raised: #1C2224;
+    --ink: #EDEFEF;
+    --ink-soft: #9DA9AC;
+    --line: #333B3D;
+    --amber: #E9BD73;
+    --link: #6FB3AA;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 16px 64px; }
+  h1 { font-size: 1.75rem; line-height: 1.4; margin: 0 0 4px; }
+  .sub { color: var(--ink-soft); margin: 0 0 32px; }
+  .card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 24px;
+  }
+  .card h2 { font-size: 1.05rem; margin: 0 0 8px; }
+  .card ul { margin: 0; padding-left: 1.2em; }
+  .store {
+    display: inline-block;
+    background: var(--amber);
+    color: #17232C;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    margin-bottom: 32px;
+  }
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li { padding: 10px 0; border-top: 1px solid var(--line); }
+  .links li:last-child { border-bottom: 1px solid var(--line); }
+  a { color: var(--link); }
+  footer { color: var(--ink-soft); font-size: 0.85rem; margin-top: 40px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <h1>TripSketch - 旅程プランナー</h1>
+  <p class="sub">友だちや家族と一緒に編集できる、旅のしおりアプリ</p>
+
+  <a class="store" href="https://apps.apple.com/jp/app/id6811914534">App Storeでダウンロード</a>
+
+  <section class="card">
+    <h2>できること</h2>
+    <ul>
+      <li>1日ごとのタイムラインで予定を組み立て、ドラッグで時間を調整</li>
+      <li>招待リンクを送るだけで、同行者とリアルタイムに共同編集</li>
+      <li>1日分の予定を画像にして共有</li>
+      <li>複数の旅程をまとめて管理</li>
+    </ul>
+  </section>
+
+  <ul class="links">
+    <li><a href="https://bebebe113.github.io/tripsketch-legal/support.html">サポート・お問い合わせ</a></li>
+    <li><a href="https://bebebe113.github.io/tripsketch-legal/">プライバシーポリシー</a></li>
+  </ul>
+
+  <footer>© 2026 TripSketch</footer>
+</main>
+</body>
+</html>
