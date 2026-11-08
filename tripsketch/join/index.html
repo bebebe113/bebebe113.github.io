@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>TripSketch 旅程への招待</title>
+<meta name="description" content="TripSketchの旅程に招待されています。アプリで開くと参加できます。">
+<meta property="og:title" content="TripSketchの旅程に招待されています">
+<meta property="og:description" content="アプリで開くと、一緒に旅程を編集できます。">
+<meta property="og:image" content="https://bebebe113.github.io/img/tripsketch.jpg">
+<style>
+  :root {
+    color-scheme: light dark;
+    --paper: #F1F4F3;
+    --paper-raised: #FFFFFF;
+    --ink: #17232C;
+    --ink-soft: #5C6B72;
+    --line: #D8E0DE;
+    --accent: #2E7A76;
+    --amber: #E3A94D;
+    --link: #3A6B66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14181A;
+      --paper-raised: #1C2224;
+      --ink: #EDEFEF;
+      --ink-soft: #9DA9AC;
+      --line: #333B3D;
+      --accent: #4FA39D;
+      --amber: #E9BD73;
+      --link: #6FB3AA;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14181A;
+    --paper-raised: #1C2224;
+    --ink: #EDEFEF;
+    --ink-soft: #9DA9AC;
+    --line: #333B3D;
+    --accent: #4FA39D;
+    --amber: #E9BD73;
+    --link: #6FB3AA;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 480px; margin: 0 auto; padding: 48px 16px 56px; }
+  .card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 22px;
+    text-align: center;
+  }
+  .card img {
+    width: 76px; height: 76px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+  }
+  h1 { font-size: 1.3rem; line-height: 1.5; margin: 14px 0 6px; }
+  .lead { color: var(--ink-soft); margin: 0 0 24px; font-size: 0.95rem; }
+  .button {
+    display: block;
+    background: var(--accent);
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+  .store {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--link);
+    font-size: 0.92rem;
+  }
+  .notes { color: var(--ink-soft); font-size: 0.85rem; margin: 24px 4px 0; padding-left: 1.2em; }
+  .notes li { margin-bottom: 6px; }
+  .error { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="card">
+    <img src="../../img/tripsketch.jpg" alt="TripSketchのアイコン">
+    <h1>TripSketchの旅程に<br>招待されています</h1>
+    <div id="invite" hidden>
+      <p class="lead">アプリで開くと、一緒に旅程を編集できます。</p>
+      <a id="open" class="button" href="#">TripSketchで開く</a>
+      <a class="store" href="https://apps.apple.com/jp/app/id6811914534">アプリをまだ入れていない方はこちら</a>
+    </div>
+    <p id="invalid" class="lead error" hidden>
+      招待リンクが正しくありません。招待した人に、もう一度リンクを送ってもらってください。
+    </p>
+  </div>
+  <ul class="notes">
+    <li>参加には、iPhoneでiCloudにサインインしている必要があります。</li>
+    <li>ボタンを押してもアプリが開かない場合は、画面のメニューから「ブラウザで開く」を選んでから、もう一度押してください。</li>
+  </ul>
+</main>
+<script>
+  // The iCloud share link rides in the fragment, which browsers never send to the server.
+  (function () {
+    var shareURL = "";
+    try {
+      shareURL = decodeURIComponent(location.hash.slice(1));
+    } catch (e) {}
+    if (shareURL.indexOf("https://www.icloud.com/share/") !== 0) {
+      document.getElementById("invalid").hidden = false;
+      return;
+    }
+    document.getElementById("open").href = "tripplanner://share?url=" + encodeURIComponent(shareURL);
+    document.getElementById("invite").hidden = false;
+  })();
+</script>
+</body>
+</html>
